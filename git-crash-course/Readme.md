@@ -35,6 +35,20 @@ cd /workspaces/Zain-Github-Examples
 
 ```sh
 git clone https://github.com/ZainVey/Zain-Github-Examples.git
+cd Github-Examples
+```
+>You'll need ti generate a Personal Access Token (PAT)
+https://github.com/settings/tokens
+
+You will use the PAT as your password when you login
+
+-Give it access to Contents for Commits
+
+## SSH
+
+```ssh
+git clone git@github.com:ZainVey/Zain-Github-Examples.git
+cd GitHub Examples
 ```
 
 ## Commits
