@@ -46,9 +46,43 @@ You will use the PAT as your password when you login
 
 ## SSH
 
-```ssh
+```
 git clone git@github.com:ZainVey/Zain-Github-Examples.git
-cd GitHub Examples
+cd GitHub-Examples
+```
+
+We will need to create our own SSH rsa key pair
+
+```
+sshe-keygen -t rsa
+```
+For WSL users and if you crete a non default key you might need to add it
+
+```
+eval `ssh-agent`
+ssh-add /home/andrew/.ssh/alt-github_id_rsa
+```
+
+We can test our connection here:
+
+```
+ssh -T git@github.com
+```
+
+## Github CLI
+Install the CLI
+
+eg. Linux (Ubuntu)
+
+```
+type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
+gh auth login
+gh repo clone ZainVey/Zain-Github-Examples
 ```
 
 ## Commits
@@ -68,6 +102,24 @@ Make a commit and commit message without opening an editor
 git commit - " add another exclamation"
 ```
 ## Branches
+
+List of branches
+
+```
+git branch
+```
+
+Create a new branch
+
+```
+git branch branch-name
+```
+
+Checkout the branch
+
+```
+git checkout dev
+```
 
 ## Remotes
 
